@@ -1,5 +1,7 @@
 # Collaborative Canvas
 
+**Live demo:** https://collaborative-canvas-jw6l.onrender.com
+
 Real-time multi-user drawing board. Native WebSockets (`ws`) + Express on the
 server, vanilla Canvas API on the client. No frontend framework, no drawing
 libraries.
@@ -58,6 +60,9 @@ Full design rationale is in `ARCHITECTURE.md`.
 - **Fixed reconnect backoff (1s)**, not exponential. Good enough for a demo;
   would need backoff + jitter for a production deployment with many clients
   reconnecting simultaneously after an outage.
+- **Free-tier hosting spins down after 15 minutes of inactivity.** The first
+  request after idle time can take 20-30 seconds to wake the server up —
+  expected behavior, not a bug.
 - Tested on Chrome and Firefox. Should work on Safari (standard Canvas +
   WebSocket + Pointer Events APIs, no exotic features used) but not
   separately verified.
