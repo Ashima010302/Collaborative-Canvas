@@ -15,23 +15,10 @@ npm start
 
 Then open `http://localhost:3000` in a browser.
 
-## Testing with multiple users
-
-Open the app in two (or more) browser tabs/windows, or on two devices on the
-same network hitting `http://<your-ip>:3000`. Everyone lands in the same
-`default` room unless you add `?room=NAME` to the URL, e.g.:
-
-```
-http://localhost:3000/?room=team-a&name=Alex
-http://localhost:3000/?room=team-a&name=Sam
-```
-
-Draw in one tab, it should appear in the other within ~40ms. Move your mouse
-without drawing and the other tab should show a labeled cursor dot tracking
-you. Undo/redo (buttons or Ctrl+Z / Ctrl+Shift+Z) affects everyone's canvas,
+ects everyone's canvas,
 not just the user who drew the stroke.
 
-## How it works (short version)
+## How it works 
 
 - Every completed stroke is stored on the server, keyed by id, in creation
   order. Order never changes.
